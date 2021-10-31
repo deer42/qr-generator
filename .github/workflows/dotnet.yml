@@ -20,8 +20,8 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore --version-suffix $GITHUB_RUN_NUMBER
+      run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish -p:PublishProfile=FolderProfile
+      run: dotnet publish -p:PublishProfile=FolderProfile --version-suffix $GITHUB_RUN_NUMBER
