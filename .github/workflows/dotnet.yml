@@ -23,5 +23,3 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
-    - name: Publish CLI
-      run: dotnet publish .\src\QrGenerator.Cli\QrGenerator.Cli.csproj -c Release -o publish --version-suffix $GITHUB_RUN_NUMBER
