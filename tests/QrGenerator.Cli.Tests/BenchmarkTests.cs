@@ -7,6 +7,7 @@ using System.Reflection;
 
 namespace QrGenerator.Cli.Tests
 {
+    [TestFixture]
     public class BenchmarkTests
     {
         private readonly string _sourceFileDir = $"{Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}\\DataIn";
