@@ -1,0 +1,48 @@
+﻿using ExcelDataReader;
+using QrGenerator.Abstract;
+using System.Data;
+using System.IO;
+
+namespace QrGenerator.Readers
+{
+    public abstract class TableReaderBase : ISourceFileReader
+    {
+        protected readonly string Path;
+        protected readonly bool HasHeader;
+        protected readonly int SkipRows;
+
+        protected TableReaderBase(QrOptions options)
+        {
+            Path = options.SourceFilePath;
+            HasHeader = options.HasHeader;
+            SkipRows = options.SkipRows;
+        }
+
+        public DataSet Read()
+        {
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+
+            using var stream = File.Open(Path, FileMode.Open, FileAccess.Read);
+            using var reader = CreateReader(stream);
+            var config = new ExcelDataSetConfiguration()
+            {
+                UseColumnDataType = true,
+                FilterSheet = (tableReader, sheetIndex) => true,
+                ConfigureDataTable = (tableReader) => new ExcelDataTableConfiguration
+                {
+                    UseHeaderRow = HasHeader,
+                    ReadHeaderRow = (rowReader) =>
+                    {
+                        for (int i = 0; i < SkipRows; i++)
+                        {
+                            rowReader.Read();
+                        }
+                    }
+                }
+            };
+            return reader.AsDataSet(config);
+        }
+
+        protected abstract IExcelDataReader CreateReader(FileStream stream);
+    }
+}

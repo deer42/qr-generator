@@ -39,7 +39,7 @@ namespace QrGenerator.Cli.Tests
                 DestinationDirectoryPath = _destinationDir,
                 DestinationFileType = DestinationFileType.JPG,
                 RunInParallel = false,
-                SkipHeader = true,
+                HasHeader = true,
                 PixelsPerModule = 8
             };
 
@@ -65,7 +65,7 @@ namespace QrGenerator.Cli.Tests
                 DestinationDirectoryPath = _destinationDir,
                 DestinationFileType = DestinationFileType.JPG,
                 RunInParallel = true,
-                SkipHeader = true,
+                HasHeader = true,
                 PixelsPerModule = 8,                
             };
 

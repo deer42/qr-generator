@@ -5,33 +5,15 @@ using System.IO;
 
 namespace QrGenerator.Readers
 {
-    public class CsvReader : ISourceFileReader
+    public class CsvReader : TableReaderBase
     {
-        private readonly string _path;
-        private readonly bool _skipHeader;
+        public CsvReader(QrOptions options) : base(options)
+        {            
+        }        
 
-        public CsvReader(QrOptions options)
+        protected override IExcelDataReader CreateReader(FileStream stream)
         {
-            _path = options.SourceFilePath;
-            _skipHeader = options.SkipHeader;
-        }
-
-        public DataSet Read()
-        {
-            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-
-            using var stream = File.Open(_path, FileMode.Open, FileAccess.Read);
-            using var reader = ExcelReaderFactory.CreateCsvReader(stream);
-            var config = new ExcelDataSetConfiguration()
-            {
-                UseColumnDataType = true,
-                FilterSheet = (tableReader, sheetIndex) => true,
-                ConfigureDataTable = (tableReader) => new ExcelDataTableConfiguration
-                {
-                    UseHeaderRow = _skipHeader
-                }
-            };
-            return reader.AsDataSet(config);
+            return ExcelReaderFactory.CreateCsvReader(stream);
         }
     }
 }

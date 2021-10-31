@@ -10,7 +10,8 @@ namespace QrGenerator.Cli
             DestinationFileType = options.DestinationFileType,
             Format = options.Format,
             PixelsPerModule = options.PixelsPerModule,
-            SkipHeader = options.SkipHeader,
+            HasHeader = options.HasHeader,
+            SkipRows = options.SkipRows,
             SourceFilePath = options.SourceFilePath,
             RunInParallel = options.RunInParallel
         };

@@ -10,8 +10,10 @@
                 
         public int PixelsPerModule { get; set; }
                 
-        public bool SkipHeader { get; set; }
-                
+        public bool HasHeader { get; set; }
+        
+        public int SkipRows { get; set; }
+
         public string Format { get; set; }
 
         public bool RunInParallel { get; set; }

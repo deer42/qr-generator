@@ -2,7 +2,7 @@
   "profiles": {
     "QrGenerator.Cli": {
       "commandName": "Project",
-      "commandLineArgs": "-s \"C:\\Users\\Dennis\\Documents\\GitHub\\qr-generator\\data\\testdata.txt\" -o \"C:\\temp\\qrcodes\" -p 16 -t \"JPG\" -h -x"
+      "commandLineArgs": "-s \"C:\\Users\\Dennis\\Documents\\GitHub\\qr-generator\\data\\testdata.xlsx\" -o \"C:\\temp\\qrcodes\" -p 16 -t \"JPG\" -h -x --skipRows 4"
     }
   }
 }

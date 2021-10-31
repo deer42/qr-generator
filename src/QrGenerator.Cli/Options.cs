@@ -17,8 +17,11 @@ namespace QrGenerator.Cli
         [Option('p', "pixelsPerModule", Required = false, Default = 8, HelpText = "Sets the size of each module in pixels")]
         public int PixelsPerModule { get; set; }
 
-        [Option('h', "skipHeader", Required = false, Default = false, HelpText = "Use this to skip the first line")]
-        public bool SkipHeader { get; set; }
+        [Option('h', "hasHeader", Required = false, Default = false, HelpText = "Use this to use headers")]
+        public bool HasHeader { get; set; }
+
+        [Option("skipRows", Required = false, Default = 0, HelpText = "Use this to skip the first x lines")]
+        public int SkipRows { get; set; }
 
         [Option('f', "format", Required = false, Default ="k:v/n", HelpText = "Sets the pattern to format the data")]
         public string Format { get; set; }
