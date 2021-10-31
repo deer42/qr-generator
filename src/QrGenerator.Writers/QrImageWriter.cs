@@ -1,5 +1,4 @@
 ﻿using QRCoder;
-using System.Drawing;
 using QrGenerator.Abstract;
 using System;
 

@@ -2,6 +2,7 @@
 using QrGenerator.Abstract;
 using System.Data;
 using System.IO;
+using System.Linq;
 
 namespace QrGenerator.Readers
 {
@@ -16,6 +17,7 @@ namespace QrGenerator.Readers
             Path = options.SourceFilePath;
             HasHeader = options.HasHeader;
             SkipRows = options.SkipRows;
+            ValidateFileType();
         }
 
         public DataSet Read()
@@ -44,5 +46,18 @@ namespace QrGenerator.Readers
         }
 
         protected abstract IExcelDataReader CreateReader(FileStream stream);
+
+        private void ValidateFileType()
+        {
+            var supportedFileTypes = GetSupportedFileTypes();
+            var fileExtension = new FileInfo(Path).Extension;
+
+            if (!supportedFileTypes.Contains(fileExtension))
+            {
+                throw new InvalidDataException($"File type {fileExtension} is not supported");
+            }
+        }
+
+        protected abstract string[] GetSupportedFileTypes();
     }
 }
