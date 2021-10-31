@@ -24,4 +24,4 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish -p:PublishProfile=FolderProfile --version-suffix $GITHUB_RUN_NUMBER
+      run: dotnet publish QrGenerator.sln -p:PublishProfile=FolderProfile --version-suffix $GITHUB_RUN_NUMBER
