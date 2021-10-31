@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QrGenerator.Writers.Tests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QrGenerator.Readers.Tests", "tests\QrGenerator.Readers.Tests\QrGenerator.Readers.Tests.csproj", "{8483A939-F496-495D-A89F-699485AF94A0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QrGenerator.Tests", "tests\QrGenerator.Tests\QrGenerator.Tests.csproj", "{234F7D83-A53A-494D-8ABB-FAC2E26ED8C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{8483A939-F496-495D-A89F-699485AF94A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8483A939-F496-495D-A89F-699485AF94A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8483A939-F496-495D-A89F-699485AF94A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{234F7D83-A53A-494D-8ABB-FAC2E26ED8C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{234F7D83-A53A-494D-8ABB-FAC2E26ED8C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{234F7D83-A53A-494D-8ABB-FAC2E26ED8C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{234F7D83-A53A-494D-8ABB-FAC2E26ED8C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{7F1CECE6-5567-4D6A-96EA-F00C5E2E306C} = {8E44B94B-5CE9-4EC5-A590-2CA312F32792}
 		{363E9929-A48C-4731-864F-D9D7EE88967B} = {EE49F196-2A9B-43BB-8A87-43B9C490FA33}
 		{8483A939-F496-495D-A89F-699485AF94A0} = {EE49F196-2A9B-43BB-8A87-43B9C490FA33}
+		{234F7D83-A53A-494D-8ABB-FAC2E26ED8C7} = {EE49F196-2A9B-43BB-8A87-43B9C490FA33}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6A35C6AC-0787-473F-AEA9-820C1EA17AE5}

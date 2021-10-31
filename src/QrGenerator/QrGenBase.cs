@@ -18,16 +18,10 @@ namespace QrGenerator
 
         public void Execute()
         {
-            var dataSet = GetDataSet();
+            var dataSet = Reader.Read();
             var qrCodeData = GetQrCodeData(dataSet);
             ExportQrCodes(qrCodeData);
-        }
-
-        private DataSet GetDataSet()
-        {
-            var dataSet = Reader.Read();
-            return dataSet;
-        }
+        }        
 
         private Dictionary<string, string> GetQrCodeData(DataSet dataSet)
         {
