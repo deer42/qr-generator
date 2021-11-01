@@ -61,7 +61,7 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       shell: powershell
       run: |
-        .\.sonar\scanner\dotnet-sonarscanner begin /k:"deer42_qr-generator" /o:"deer42" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="output.cobertura.xml"
+        .\.sonar\scanner\dotnet-sonarscanner begin /k:"deer42_qr-generator" /o:"deer42" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml" /d:sonar.cs.vstest.reportsPaths="**/results.trx"
         dotnet build -c Release --no-restore
-        dotnet-coverage collect "dotnet test" -f cobertura
+        dotnet test -c Release --no-restore --no-build --collect:"XPlat Code Coverage" --settings coverlet.runsettings.xml
         .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
