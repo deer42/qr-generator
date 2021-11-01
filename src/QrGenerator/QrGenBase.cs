@@ -9,11 +9,13 @@ namespace QrGenerator
     {
         protected readonly ISourceFileReader Reader;
         protected readonly IQrWriter Writer;
+        protected readonly QrOptions Options;
 
-        protected QrGenBase(ISourceFileReader reader, IQrWriter writer)
+        protected QrGenBase(ISourceFileReader reader, IQrWriter writer, QrOptions options)
         {
             Reader = reader;
             Writer = writer;
+            Options = options;
         }
 
         public void Execute()
@@ -23,7 +25,7 @@ namespace QrGenerator
             ExportQrCodes(qrCodeData);
         }        
 
-        private static Dictionary<string, string> GetQrCodeData(DataSet dataSet)
+        private Dictionary<string, string> GetQrCodeData(DataSet dataSet)
         {
             Dictionary<string, string> result = new();
 
@@ -37,7 +39,7 @@ namespace QrGenerator
                     var cells = rows[rowIndex].ItemArray;
 
                     List<string> texts = new();
-                    string name = cells[0].ToString();
+                    string key = GetKey(cells);
 
                     for (int cellIndex = 0; cellIndex < cells.Length; cellIndex++)
                     {
@@ -45,8 +47,8 @@ namespace QrGenerator
                         texts.Add(text);
                     }
 
-                    var content = string.Join(Environment.NewLine, texts);
-                    result.Add(name, content);
+                    var value = string.Join(Environment.NewLine, texts);
+                    result.Add(key, value);
                 }
             }
 
@@ -64,5 +66,20 @@ namespace QrGenerator
         }
 
         protected abstract void ExportQrCodes(Dictionary<string, string> qrCodeData);
+
+        private string GetKey(object?[] cells)
+        {
+            if (cells is null)
+            {
+                throw new ArgumentNullException(nameof(cells), "Cells should contain values");
+            }
+
+            if (Options?.Key is int key)
+            {
+                return cells[key].ToString();                
+            }
+            
+            return Guid.NewGuid().ToString();
+        }
     }
 }

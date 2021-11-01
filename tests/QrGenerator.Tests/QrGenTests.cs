@@ -15,7 +15,9 @@ namespace QrGenerator.Tests
                 DestinationFileType = DestinationFileType.JPG,
                 RunInParallel = false,
                 HasHeader = true,
-                PixelsPerModule = 8
+                PixelsPerModule = 8,
+                Key = 0,
+                NamePattern = "{key}"
             };
         }
     }

@@ -28,5 +28,17 @@ namespace QrGenerator.Cli
 
         [Option('x', "turbo", Required = false, HelpText = "Try to export in parallel")]
         public bool RunInParallel { get; set; }
+
+        [Option("namePattern", Required = false, Default = "{key}", HelpText = "Examples: '{prefix}_{key}_{suffix}', '{key}', '{prefix}-{key}'")]
+        public string NamePattern { get; set; }
+
+        [Option("prefix", Required = false, Default = "")]
+        public string Prefix { get; set; }
+
+        [Option("suffix", Required = false, Default = "")]
+        public string Suffix { get; set; }
+
+        [Option("key", Required = false, HelpText = "Defines the column (first column = 0, second column = 1, ...) which contains the unique id or name of the qr code. If left empty an id will be generated instead.")]
+        public int? KeyColumn { get; set; }
     }
 }

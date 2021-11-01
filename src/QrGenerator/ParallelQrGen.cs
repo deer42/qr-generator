@@ -6,7 +6,7 @@ namespace QrGenerator
 {
     public class ParallelQrGen : QrGenBase
     {
-        public ParallelQrGen(ISourceFileReader reader, IQrWriter writer) : base(reader, writer)
+        public ParallelQrGen(ISourceFileReader reader, IQrWriter writer, QrOptions options) : base(reader, writer, options)
         {
         }
 

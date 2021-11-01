@@ -17,5 +17,13 @@
         public string Format { get; set; }
 
         public bool RunInParallel { get; set; }
+        
+        public string NamePattern { get; set; }
+                
+        public string Prefix { get; set; }
+                
+        public string Suffix { get; set; }
+                
+        public int? Key { get; set; }
     }
 }

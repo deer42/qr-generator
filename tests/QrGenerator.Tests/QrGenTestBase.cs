@@ -38,7 +38,7 @@ namespace QrGenerator.Tests
             var options = GetOptions();
             var reader = new ExcelReader(options);
             var writer = new QrImageWriter(options);
-            var qrGen = QrGenFactory.Create(options, reader, writer);
+            var qrGen = QrGenFactory.Create(reader, writer, options);
 
             Action act = () => qrGen.Execute();
 
@@ -51,7 +51,7 @@ namespace QrGenerator.Tests
             var options = GetOptions();
             var reader = new ExcelReader(options);
             var writer = new QrImageWriter(options);
-            var qrGen = QrGenFactory.Create(options, reader, writer);
+            var qrGen = QrGenFactory.Create(reader, writer, options);
 
             qrGen.Execute();
 

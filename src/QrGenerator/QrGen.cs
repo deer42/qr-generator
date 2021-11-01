@@ -5,7 +5,7 @@ namespace QrGenerator
 {
     public class QrGen : QrGenBase
     {
-        public QrGen(ISourceFileReader reader, IQrWriter writer) : base(reader, writer)
+        public QrGen(ISourceFileReader reader, IQrWriter writer, QrOptions options) : base(reader, writer, options)
         {
         }
 

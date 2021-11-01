@@ -45,7 +45,7 @@ namespace QrGenerator.Benchmarks
 
             ISourceFileReader reader = SourceFileReaderFactory.Create(qrOptions);
             IQrWriter writer = QrWriterFactory.Create(qrOptions);
-            var qrGen = QrGenFactory.Create(qrOptions, reader, writer);           
+            var qrGen = QrGenFactory.Create(reader, writer, qrOptions);           
 
             qrGen.Execute();            
         }
@@ -65,7 +65,7 @@ namespace QrGenerator.Benchmarks
 
             ISourceFileReader reader = SourceFileReaderFactory.Create(qrOptions);
             IQrWriter writer = QrWriterFactory.Create(qrOptions);
-            var qrGen = QrGenFactory.Create(qrOptions, reader, writer);
+            var qrGen = QrGenFactory.Create(reader, writer, qrOptions);
 
             qrGen.Execute();
         }

@@ -20,7 +20,11 @@ namespace QrGenerator.Cli
                 HasHeader = options.HasHeader,
                 SkipRows = options.SkipRows,
                 SourceFilePath = options.SourceFilePath,
-                RunInParallel = options.RunInParallel
+                RunInParallel = options.RunInParallel,
+                Key = options.KeyColumn,
+                NamePattern = options.NamePattern,
+                Prefix = options.Prefix,
+                Suffix = options.Suffix
             };
         }
     }

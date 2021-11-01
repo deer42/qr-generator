@@ -4,9 +4,9 @@ namespace QrGenerator
 {
     public static class QrGenFactory
     {
-        public static IQrGen Create(QrOptions options, ISourceFileReader reader, IQrWriter writer)
+        public static IQrGen Create(ISourceFileReader reader, IQrWriter writer, QrOptions options)
         {
-            return options.RunInParallel ? new ParallelQrGen(reader, writer) : new QrGen(reader, writer);
+            return options.RunInParallel ? new ParallelQrGen(reader, writer, options) : new QrGen(reader, writer, options);
         }
     }
 }

@@ -23,7 +23,7 @@ namespace QrGenerator.Tests
         public void Create_Should_Return_What_Implements_IQrGen()
         {
             var options = new QrOptions { RunInParallel = false };
-            var qrGen = QrGenFactory.Create(options, _reader, _writer);
+            var qrGen = QrGenFactory.Create(_reader, _writer, options);
 
             qrGen.Should().BeAssignableTo<IQrGen>();
         }
@@ -32,7 +32,7 @@ namespace QrGenerator.Tests
         public void Create_Should_Return_Instance_Of_Type_QrGen()
         {
             var options = new QrOptions { RunInParallel = false };
-            var qrGen = QrGenFactory.Create(options, _reader, _writer);
+            var qrGen = QrGenFactory.Create(_reader, _writer, options);
 
             qrGen.Should().BeOfType<QrGen>();
         }
@@ -41,7 +41,7 @@ namespace QrGenerator.Tests
         public void Create_Should_Return_Instance_Of_Type_ParallelQrGen()
         {
             var options = new QrOptions { RunInParallel = true };
-            var qrGen = QrGenFactory.Create(options, _reader, _writer);
+            var qrGen = QrGenFactory.Create(_reader, _writer, options);
 
             qrGen.Should().BeOfType<ParallelQrGen>();
         }
