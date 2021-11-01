@@ -22,12 +22,13 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory:"coverage"
+      run: dotnet test --no-build --verbosity normal
+    - name: Coverage
+      run: dotnet-coverage collect "dotnet test" -f cobertura
     - name: Codecov      
       uses: codecov/codecov-action@v2.1.0
       with:        
-        token: 43c789a4-4740-43e5-b632-c6c34e1269f6        
-        directory: publish        
-        flags: unittests        
-        fail_ci_if_error: true        
-        # move_coverage_to_trash: # optional
+        token: 43c789a4-4740-43e5-b632-c6c34e1269f6
+        flags: unittests
+        fail_ci_if_error: true
+        file: output.cobertura.xml
