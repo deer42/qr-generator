@@ -63,4 +63,4 @@ jobs:
         token: 43c789a4-4740-43e5-b632-c6c34e1269f6
         flags: unittests
         fail_ci_if_error: true
-        file: output.cobertura.xml
+        file: ./coverage/output.cobertura.xml
