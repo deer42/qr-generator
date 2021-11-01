@@ -21,10 +21,10 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+    #- name: Test
+     # run: dotnet test --no-build --verbosity normal
     - name: Coverage
-      run: dotnet-coverage collect "dotnet test" -f cobertura
+      run: dotnet tool install --global dotnet-coverage; dotnet-coverage collect "dotnet test" -f cobertura
     - name: Codecov      
       uses: codecov/codecov-action@v2.1.0
       with:        
