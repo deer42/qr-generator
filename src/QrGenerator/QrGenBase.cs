@@ -23,7 +23,7 @@ namespace QrGenerator
             ExportQrCodes(qrCodeData);
         }        
 
-        private Dictionary<string, string> GetQrCodeData(DataSet dataSet)
+        private static Dictionary<string, string> GetQrCodeData(DataSet dataSet)
         {
             Dictionary<string, string> result = new();
 
