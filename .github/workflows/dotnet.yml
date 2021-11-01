@@ -57,6 +57,10 @@ jobs:
         dotnet test -c Release --no-restore --no-build --collect:"XPlat Code Coverage" --settings coverlet.runsettings.xml
         .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
     
+    - name: Install dotnet-coverage
+      run: dotnet tool install --global dotnet-coverage
+    - name: Test
+      run: dotnet-coverage collect "dotnet test" -f cobertura
     - name: Codecov      
       uses: codecov/codecov-action@v2.1.0
       with:        
