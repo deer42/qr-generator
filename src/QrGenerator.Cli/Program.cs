@@ -4,7 +4,7 @@ using System;
 
 namespace QrGenerator.Cli
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {

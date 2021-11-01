@@ -53,7 +53,7 @@ namespace QrGenerator
             return result;
         }
 
-        private string[] GetHeaders(DataTable table)
+        private static string[] GetHeaders(DataTable table)
         {
             List<string> headers = new();
             foreach (DataColumn column in table.Columns)

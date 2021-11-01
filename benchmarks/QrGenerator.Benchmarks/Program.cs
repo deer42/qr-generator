@@ -2,11 +2,11 @@
 
 namespace QrGenerator.Benchmarks
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<QrGeneratorBenchmarker>();
+            BenchmarkRunner.Run<QrGeneratorBenchmarker>();
         }
     }
 }
