@@ -1,9 +1,7 @@
-﻿using System.Data;
-
-namespace QrGenerator.Abstract
+﻿namespace QrGenerator.Abstract
 {
     public interface ISourceFileReader
     {
-        DataSet Read();
+        Table Read();
     }
 }

@@ -42,7 +42,8 @@ namespace QrGenerators.Writers.Tests
 
             using (var writer = new QrImageWriter(options))
             {
-                writer.Write(nameof(Write_Should_Save), nameof(Write_Should_Save));
+                var qrInfo = new QrInfo(expected, nameof(Write_Should_Save));
+                writer.Write(qrInfo);
             }
 
             File.Exists(expected).Should().BeTrue();

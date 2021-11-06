@@ -8,11 +8,11 @@ namespace QrGenerator
     {
         public ParallelQrGen(ISourceFileReader reader, IQrWriter writer, QrOptions options) : base(reader, writer, options)
         {
-        }
+        }        
 
-        protected override void ExportQrCodes(Dictionary<string, string> qrCodeData)
+        protected override void ExportQrCodes(IList<QrInfo> qrCodes)
         {
-            Parallel.ForEach(qrCodeData, pair => Writer.Write(pair.Key, pair.Value));
+            Parallel.ForEach(qrCodes, qrCode => Writer.Write(qrCode));            
         }
     }
 }

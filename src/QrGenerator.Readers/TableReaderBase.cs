@@ -1,6 +1,5 @@
 ﻿using ExcelDataReader;
 using QrGenerator.Abstract;
-using System.Data;
 using System.IO;
 using System.Linq;
 
@@ -20,7 +19,7 @@ namespace QrGenerator.Readers
             ValidateFileType();
         }
 
-        public DataSet Read()
+        public Table Read()
         {
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
 
@@ -42,7 +41,8 @@ namespace QrGenerator.Readers
                     }
                 }
             };
-            return reader.AsDataSet(config);
+            var dataSet = reader.AsDataSet(config);
+            return TableFactory.Create(dataSet);
         }
 
         protected abstract IExcelDataReader CreateReader(FileStream stream);

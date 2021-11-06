@@ -16,9 +16,11 @@ namespace QrGenerator.Cli
             try
             {
                 var qrOptions = options.ToQrOptions();
+                
                 ISourceFileReader reader = SourceFileReaderFactory.Create(qrOptions);
                 IQrWriter writer = QrWriterFactory.Create(qrOptions);
                 var qrGen = QrGenFactory.Create(reader, writer, qrOptions);
+                
                 qrGen.Execute();
             }
             catch (Exception ex)

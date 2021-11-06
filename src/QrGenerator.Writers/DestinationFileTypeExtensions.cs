@@ -14,11 +14,6 @@ namespace QrGenerator.Writers
                 DestinationFileType.PNG => ImageFormat.Png,
                 _ => ImageFormat.Jpeg
             };
-        }
-
-        public static string ToFileExtension(this DestinationFileType fileType)
-        {
-            return fileType.ToString().ToLower();
-        }
+        }        
     }
 }

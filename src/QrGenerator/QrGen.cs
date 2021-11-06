@@ -7,14 +7,14 @@ namespace QrGenerator
     {
         public QrGen(ISourceFileReader reader, IQrWriter writer, QrOptions options) : base(reader, writer, options)
         {
-        }
+        }        
 
-        protected override void ExportQrCodes(Dictionary<string, string> qrCodeData)
+        protected override void ExportQrCodes(IList<QrInfo> qrCodes)
         {
-            foreach (var pair in qrCodeData)
+            foreach (var qrCode in qrCodes)
             {
-                Writer.Write(pair.Key, pair.Value);
+                Writer.Write(qrCode);
             }
         }
-    }
+    }    
 }

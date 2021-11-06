@@ -45,7 +45,7 @@ namespace QrGenerator.Readers.Tests
 
             var result = reader.Read();
 
-            result.Tables[0].Rows.Count.Should().Be(267);
+            result.Data.Count.Should().Be(267);
         }
 
         public virtual void Read_Should_Throw_If_File_Type_Is_Not_Supported(string extension)
