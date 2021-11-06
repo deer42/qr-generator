@@ -67,7 +67,7 @@ namespace QrGenerator
 
         protected abstract void ExportQrCodes(Dictionary<string, string> qrCodeData);
 
-        private string GetKey(object?[] cells)
+        private string GetKey(object[] cells)
         {
             if (cells is null)
             {

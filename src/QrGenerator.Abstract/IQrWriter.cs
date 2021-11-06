@@ -2,7 +2,7 @@
 {
     public interface IQrWriter
     {
-        void Write(string name, string text);
+        void Write(string key, string value);
     }
 
     public interface IQrGenFactory
