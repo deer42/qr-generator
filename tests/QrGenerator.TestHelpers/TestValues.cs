@@ -14,7 +14,7 @@ namespace QrGenerator.TestHelpers
         public const string DefaultNamePattern = "{prefix}_{key}_{suffix}";
         public const string DefaultPrefix = "pre";
         public const string DefaultSuffix = "suf";
-        public const string DefaultFormat = "k:v/n";
+        public const string DefaultFormat = "{k}: {v}{newLine}";
         public const int DefaultDataRowCount = 267;
 
         public static readonly string SourceFileDir = $"{Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}\\DataIn";

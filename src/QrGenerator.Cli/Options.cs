@@ -23,8 +23,8 @@ namespace QrGenerator.Cli
         [Option("skipRows", Required = false, Default = 0, HelpText = "Use this to skip the first x lines")]
         public int SkipRows { get; set; }
 
-        [Option('f', "format", Required = false, Default ="k:v/n", HelpText = "Sets the pattern to format the data")]
-        public string Format { get; set; }
+        [Option('f', "format", Required = false, Default ="{k}: {v}{newLine}", HelpText = "Sets the pattern to format the data. Valid blocks are {k} for the header, {v} for the value, {newLine} for a new line, {tab} for a tab")]
+        public string Format { get; set; }        
 
         [Option('x', "turbo", Required = false, HelpText = "Try to export in parallel")]
         public bool RunInParallel { get; set; }
