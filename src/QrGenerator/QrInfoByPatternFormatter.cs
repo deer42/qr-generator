@@ -43,7 +43,7 @@ namespace QrGenerator
                 .Replace(Tab, "\t");
         }
 
-        private void ValidatePattern(string pattern)
+        private static void ValidatePattern(string pattern)
         {
             if (string.IsNullOrWhiteSpace(pattern))
             {

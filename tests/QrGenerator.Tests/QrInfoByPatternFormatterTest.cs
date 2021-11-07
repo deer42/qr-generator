@@ -47,7 +47,7 @@ namespace QrGenerator.Tests
         [TestCase("{k}:{newLine}", "The given format string \"{k}:{newLine}\" is invalid. It should at least contain {v}*")]
         public void Constructor_Should_Throw(string format, string expected)
         {
-            Action act = () => new QrInfoByPatternFormatter(format);
+            Action act = () => _ = new QrInfoByPatternFormatter(format);
 
             act.Should().Throw<ArgumentException>().WithMessage(expected);
         }
