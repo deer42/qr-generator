@@ -33,7 +33,7 @@ namespace QrGenerator.Readers.Tests
             result.Data.Should().HaveCount(TestValues.DefaultDataRowCount);
         }
 
-        private DataSet GetDataSet(QrOptions options)
+        private static DataSet GetDataSet(QrOptions options)
         {
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
 
