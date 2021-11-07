@@ -22,16 +22,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\QrGenerator.Abstract\QrGenerator.Abstract.csproj" />
-    <ProjectReference Include="..\..\src\QrGenerator.Cli\QrGenerator.Cli.csproj" />
-    <ProjectReference Include="..\..\src\QrGenerator.Readers\QrGenerator.Readers.csproj" />
-    <ProjectReference Include="..\..\src\QrGenerator.Writers\QrGenerator.Writers.csproj" />
-    <ProjectReference Include="..\..\src\QrGenerator\QrGenerator.csproj" />
-    <ProjectReference Include="..\QrGenerator.TestHelpers\QrGenerator.TestHelpers.csproj" />
-  </ItemGroup>
+  </ItemGroup>  
 
   <ItemGroup>
     <Folder Include="DataIn\" />
@@ -44,6 +35,14 @@
     <None Include="..\..\data\testdata.xlsx" Link="DataIn\testdata.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\QrGenerator.Abstract\QrGenerator.Abstract.csproj" />
+    <ProjectReference Include="..\..\src\QrGenerator.Cli\QrGenerator.Cli.csproj" />
+    <ProjectReference Include="..\..\src\QrGenerator.Readers\QrGenerator.Readers.csproj" />
+    <ProjectReference Include="..\..\src\QrGenerator.Writers\QrGenerator.Writers.csproj" />
+    <ProjectReference Include="..\..\src\QrGenerator\QrGenerator.csproj" />
   </ItemGroup>
 
 </Project>

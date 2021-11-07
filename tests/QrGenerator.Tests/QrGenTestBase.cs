@@ -2,34 +2,31 @@
 using NUnit.Framework;
 using QrGenerator.Abstract;
 using QrGenerator.Readers;
+using QrGenerator.TestHelpers;
 using QrGenerator.Writers;
 using System;
 using System.IO;
-using System.Reflection;
 
 namespace QrGenerator.Tests
 {
     public abstract class QrGenTestBase
     {
-        protected readonly string SourceFileDir = $"{Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}\\DataIn";
-        protected readonly string DestinationDir = $"{Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}\\DataOut";        
-
         [SetUp]
         public void SetUp()
         {
-            Directory.Exists(SourceFileDir).Should().BeTrue();
-
-            if (!Directory.Exists(DestinationDir))
+            if (!Directory.Exists(TestValues.DestinationDir))
             {
-                Directory.CreateDirectory(DestinationDir);
-            }            
+                Directory.CreateDirectory(TestValues.DestinationDir);
+            }
+            Directory.Exists(TestValues.DestinationDir).Should().BeTrue();
         }
 
         [TearDown]
         public void TearDown()
         {
-            Directory.Exists(DestinationDir).Should().BeTrue();
-            Directory.Delete(DestinationDir, true);
+            Directory.Exists(TestValues.DestinationDir).Should().BeTrue();
+            Directory.Delete(TestValues.DestinationDir, true);
+            Directory.Exists(TestValues.DestinationDir).Should().BeFalse();
         }
 
         [Test]
@@ -55,7 +52,7 @@ namespace QrGenerator.Tests
 
             qrGen.Execute();
 
-            Directory.GetFiles(DestinationDir, "*.jpg").Should().HaveCount(267);
+            Directory.GetFiles(TestValues.DestinationDir, $"*.{options.DestinationFileType.ToFileExtension()}").Should().HaveCount(TestValues.DefaultDataRowCount);
         }
 
         protected abstract QrOptions GetOptions();

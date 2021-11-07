@@ -12,6 +12,4 @@ namespace QrGenerator.Abstract
             Data = new List<IList<string>>();
         }
     }  
-    
-    public record QrInfo(string FileName, string Content);    
 }

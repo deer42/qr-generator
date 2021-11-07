@@ -16,7 +16,7 @@ namespace QrGenerators.Writers.Tests
             {
                 yield return new TestCaseData(DestinationFileType.BMP, ImageFormat.Bmp);
                 yield return new TestCaseData(DestinationFileType.PNG, ImageFormat.Png);
-                yield return new TestCaseData(DestinationFileType.JPG, ImageFormat.Jpeg);
+                yield return new TestCaseData(DestinationFileType.JPG, ImageFormat.Jpeg);                
             }
         }
 

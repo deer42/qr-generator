@@ -1,7 +1,6 @@
 ﻿using QrGenerator.Abstract;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace QrGenerator
@@ -34,9 +33,15 @@ namespace QrGenerator
         public IList<QrInfo> Create()
         {
             List<QrInfo> result = new();
+            var colCount = _table.Headers.Count;
 
             foreach (var row in _table.Data)
             {
+                if (row.Count != colCount )
+                {
+                    continue;
+                }
+
                 var content = GetQrContent(row);
                 var key = GetKey(row);
                 var fileName = GetFileName(key);
@@ -46,7 +51,7 @@ namespace QrGenerator
             return result;
         }
 
-        public string GetQrContent(IList<string> row)
+        private string GetQrContent(IList<string> row)
         {
             var contentBuilder = new StringBuilder();
 
@@ -60,11 +65,6 @@ namespace QrGenerator
 
         private string GetKey(IList<string> row)
         {
-            if (row is null || !row.Any())
-            {
-                throw new ArgumentNullException(nameof(row), "Row should contain values");
-            }
-
             if (_options?.Key is int key)
             {
                 return row[key].ToString();

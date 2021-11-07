@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using QrGenerator.Abstract;
+using QrGenerator.TestHelpers;
 
 namespace QrGenerator.Tests
 {
@@ -8,16 +9,10 @@ namespace QrGenerator.Tests
     {
         protected override QrOptions GetOptions()
         {
-            return new QrOptions()
-            {
-                SourceFilePath = $"{SourceFileDir}\\testdata.xlsx",
-                DestinationDirectoryPath = DestinationDir,
-                DestinationFileType = DestinationFileType.JPG,
-                RunInParallel = true,
-                HasHeader = true,
-                PixelsPerModule = 8,
-                Key = 0,
-                NamePattern = "{key}"
+            return TestValues.DefaultQrOptions with 
+            { 
+                SourceFilePath = TestValues.SourceXlsxFilePath,
+                RunInParallel = true
             };
         }
     }
