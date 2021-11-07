@@ -29,7 +29,7 @@ QrGenerator.Cli.exe -s "testdata.txt" -o "C:\temp\qrcodes" -t "JPG" -p 16 -h -x 
 
   --skipRows                        (Default: 0) Use this to skip the first x lines
 
-  -f, --format                      (Default: k:v/n) Sets the pattern to format the data
+  -f, --format                      (Default: {k}: {v}{newLine}) Sets the pattern to format the data. Valid blocks are {k} for the header, {v} for the value, {newLine} for a new line, {tab} for a tab
 
   -x, --turbo                       Try to export in parallel
 
