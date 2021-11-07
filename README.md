@@ -11,31 +11,39 @@
 ## How to use
 
 ```cmd
-QrGenerator.Cli.exe -s "testdata.txt" -o "C:\temp\qrcodes" -t "JPG" -p 16 -h -x
+QrGenerator.Cli.exe -s "testdata.txt" -o "C:\temp\qrcodes" -t "JPG" -p 16 -h -x --namePattern "{prefix}_{key}_{suffix}" --prefix "myPrefix" --suffix "mySuffix" --key 0
 ```
 
 ## Parameters
 
 ```
--s, --sourceFilePath              Required. Sets the path to the source file
+  -s, --sourceFilePath              Required. Sets the path to the source file
 
--o, --destinationDirectoryPath    Required. Sets the path to the destination files directory
+  -o, --destinationDirectoryPath    Required. Sets the path to the destination files directory
 
--t, --destinationFileType         (Default: JPG) Sets the destination file type. Allowed options: JPG, PNG, BMP
+  -t, --destinationFileType         (Default: JPG) Sets the destination file type. Allowed options: JPG, PNG, BMP
 
--p, --pixelsPerModule             (Default: 8) Sets the size of each module in pixels
+  -p, --pixelsPerModule             (Default: 8) Sets the size of each module in pixels
 
--h, --hasHeader                   (Default: false) Use this to use headers
+  -h, --hasHeader                   (Default: false) Use this to use headers
 
---skipRows                        (Default: 0) Use this to skip the first x lines
+  --skipRows                        (Default: 0) Use this to skip the first x lines
 
--f, --format                      (Default: k:v/n) Sets the pattern to format the data
+  -f, --format                      (Default: k:v/n) Sets the pattern to format the data
 
--x, --turbo                       Try to export in parallel
+  -x, --turbo                       Try to export in parallel
 
---help                            Display this help screen.
+  --namePattern                     (Default: {key}) Examples: '{prefix}_{key}_{suffix}', '{key}', '{prefix}-{key}'
 
---version                         Display version information.
+  --prefix                          (Default: )
+
+  --suffix                          (Default: )
+
+  --key                             Defines the column (first column = 0, second column = 1, ...) which contains the unique id or name of the qr code. If left empty an id will be generated instead.
+
+  --help                            Display this help screen.
+
+  --version                         Display version information.
 ```
 
 ## Supported source file types
