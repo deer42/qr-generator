@@ -2,18 +2,17 @@
 using QrGenerator.Abstract;
 using QrGenerator.TestHelpers;
 
-namespace QrGenerator.Tests
+namespace QrGenerator.Tests;
+
+[TestFixture]
+public class QrGenTests : QrGenTestBase
 {
-    [TestFixture]
-    public class QrGenTests : QrGenTestBase
+    protected override QrOptions GetOptions()
     {
-        protected override QrOptions GetOptions()
+        return TestValues.DefaultQrOptions with
         {
-            return TestValues.DefaultQrOptions with 
-            {
-                SourceFilePath = TestValues.SourceXlsxFilePath, 
-                RunInParallel = false 
-            };
-        }
+            SourceFilePath = TestValues.SourceXlsxFilePath,
+            RunInParallel = false
+        };
     }
 }

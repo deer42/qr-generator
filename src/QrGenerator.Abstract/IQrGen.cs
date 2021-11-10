@@ -1,7 +1,6 @@
-﻿namespace QrGenerator.Abstract
+﻿namespace QrGenerator.Abstract;
+
+public interface IQrGen
 {
-    public interface IQrGen
-    {
-        void Execute();
-    }
+    void Execute();
 }

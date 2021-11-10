@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace QrGenerator.Abstract
+namespace QrGenerator.Abstract;
+
+public interface IQrContentFormatter
 {
-    public interface IQrContentFormatter
-    {
-        string Generate(IList<string> row, IList<string> headers);
-    }
+    string Generate(IList<string> row, IList<string> headers);
 }
