@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFramework>net6.0</TargetFramework>
+	<LangVersion>10</LangVersion>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\data\testdata.txt" Link="DataIn\testdata.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="6.2.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
+    <PackageReference Include="NSubstitute" Version="4.2.2" />
+    <PackageReference Include="NUnit" Version="3.13.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
+    <PackageReference Include="coverlet.collector" Version="3.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>  
+
+  <ItemGroup>
+    <Folder Include="DataIn\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\data\testdata.csv" Link="DataIn\testdata.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\data\testdata.xlsx" Link="DataIn\testdata.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\QrGenerator.Abstract\QrGenerator.Abstract.csproj" />
+    <ProjectReference Include="..\..\src\QrGenerator.Cli\QrGenerator.Cli.csproj" />
+    <ProjectReference Include="..\..\src\QrGenerator.Readers\QrGenerator.Readers.csproj" />
+    <ProjectReference Include="..\..\src\QrGenerator.Writers\QrGenerator.Writers.csproj" />
+    <ProjectReference Include="..\..\src\QrGenerator\QrGenerator.csproj" />
+  </ItemGroup>
+
+</Project>

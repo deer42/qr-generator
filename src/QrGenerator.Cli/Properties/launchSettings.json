@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "QrGenerator.Cli": {
+      "commandName": "Project",
+      "commandLineArgs": "-s \"C:\\Users\\Dennis\\Documents\\GitHub\\qr-generator\\data\\testdata.xlsx\" -o \"C:\\temp\\qrcodes\" -p 8 -t \"JPG\" -h -x --key 0 --namePattern \"{prefix}--{key}--{suffix}\" --prefix \"pre\" --suffix \"suf\""
+    }
+  }
+}

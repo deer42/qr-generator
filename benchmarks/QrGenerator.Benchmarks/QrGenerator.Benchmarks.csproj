@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+	<TargetFramework>net6.0</TargetFramework>
+	<LangVersion>10</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\data\testdata.txt" Link="DataIn\testdata.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\QrGenerator.Abstract\QrGenerator.Abstract.csproj" />
+    <ProjectReference Include="..\..\src\QrGenerator.Cli\QrGenerator.Cli.csproj" />
+    <ProjectReference Include="..\..\src\QrGenerator.Readers\QrGenerator.Readers.csproj" />
+    <ProjectReference Include="..\..\src\QrGenerator.Writers\QrGenerator.Writers.csproj" />
+    <ProjectReference Include="..\..\src\QrGenerator\QrGenerator.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DataIn\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\data\testdata.csv" Link="DataIn\testdata.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\data\testdata.xlsx" Link="DataIn\testdata.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
