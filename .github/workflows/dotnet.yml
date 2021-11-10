@@ -72,3 +72,12 @@ jobs:
         flags: unittests
         fail_ci_if_error: true
         file: output.cobertura.xml
+        
+    - name: Publish
+      run: dotnet publish -p:PublishProfile=FolderProfile
+      
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: Published exe
+        path: publish
