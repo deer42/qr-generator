@@ -1,15 +1,14 @@
-﻿namespace QrGenerator.Abstract
-{
-    public enum DestinationFileType
-    {
-        JPG, PNG, BMP
-    }
+﻿namespace QrGenerator.Abstract;
 
-    public static class DestinationFileTypeExtensions
+public enum DestinationFileType
+{
+    JPG, PNG, BMP
+}
+
+public static class DestinationFileTypeExtensions
+{
+    public static string ToFileExtension(this DestinationFileType fileType)
     {
-        public static string ToFileExtension(this DestinationFileType fileType)
-        {
-            return fileType.ToString().ToLower();
-        }
+        return fileType.ToString().ToLower();
     }
 }

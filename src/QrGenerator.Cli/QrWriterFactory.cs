@@ -1,13 +1,11 @@
-﻿using QrGenerator.Abstract;
-using QrGenerator.Writers;
+﻿using QrGenerator.Writers;
 
-namespace QrGenerator.Cli
+namespace QrGenerator.Cli;
+
+public static class QrWriterFactory
 {
-    public static class QrWriterFactory
+    public static IQrWriter Create(QrOptions options)
     {
-        public static IQrWriter Create(QrOptions options)
-        {
-            return new QrImageWriter(options);
-        }
+        return new QrImageWriter(options);
     }
 }

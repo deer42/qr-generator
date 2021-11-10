@@ -1,7 +1,6 @@
-﻿namespace QrGenerator.Abstract
+﻿namespace QrGenerator.Abstract;
+
+public interface ISourceFileReader
 {
-    public interface ISourceFileReader
-    {
-        Table Read();
-    }
+    Table Read();
 }

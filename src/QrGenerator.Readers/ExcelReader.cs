@@ -1,25 +1,20 @@
-﻿using ExcelDataReader;
-using QrGenerator.Abstract;
-using System.IO;
+﻿namespace QrGenerator.Readers;
 
-namespace QrGenerator.Readers
+public class ExcelReader : TableReaderBase
 {
-    public class ExcelReader : TableReaderBase
+    private static readonly string[] _supportedFileTypes = new string[] { ".xls", ".xlsx" };
+
+    public ExcelReader(QrOptions options) : base(options)
     {
-        private static readonly string[] _supportedFileTypes = new string[] { ".xls", ".xlsx" };
+    }
 
-        public ExcelReader(QrOptions options) : base(options)
-        {            
-        }        
+    protected override IExcelDataReader CreateReader(FileStream stream)
+    {
+        return ExcelReaderFactory.CreateReader(stream);
+    }
 
-        protected override IExcelDataReader CreateReader(FileStream stream)
-        {
-            return ExcelReaderFactory.CreateReader(stream);
-        }
-
-        protected override string[] GetSupportedFileTypes()
-        {
-            return _supportedFileTypes;
-        }
+    protected override string[] GetSupportedFileTypes()
+    {
+        return _supportedFileTypes;
     }
 }

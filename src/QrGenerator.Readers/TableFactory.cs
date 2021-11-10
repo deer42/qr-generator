@@ -1,44 +1,41 @@
-﻿using QrGenerator.Abstract;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Linq;
 
-namespace QrGenerator.Readers
+namespace QrGenerator.Readers;
+
+public static class TableFactory
 {
-    public static class TableFactory
+    public static Table Create(DataSet dataSet)
     {
-        public static Table Create(DataSet dataSet)
-        {
-            var resultTable = new Table();
+        var resultTable = new Table();
 
-            foreach (DataTable table in dataSet.Tables)
+        foreach (DataTable table in dataSet.Tables)
+        {
+            var headers = GetHeaders(table);
+            resultTable.Headers = headers;
+            var rows = table.Rows;
+
+            foreach (DataRow row in rows)
             {
-                var headers = GetHeaders(table);
-                resultTable.Headers = headers;
-                var rows = table.Rows;
-
-                foreach (DataRow row in rows)
-                {
-                    resultTable.Data.Add(GetCells(row));
-                }
+                resultTable.Data.Add(GetCells(row));
             }
-
-            return resultTable;
         }
 
-        private static IList<string> GetHeaders(DataTable table)
+        return resultTable;
+    }
+
+    private static IList<string> GetHeaders(DataTable table)
+    {
+        List<string> headers = new();
+        foreach (DataColumn column in table.Columns)
         {
-            List<string> headers = new();
-            foreach (DataColumn column in table.Columns)
-            {
-                headers.Add(column.ColumnName);
-            }
-            return headers;
+            headers.Add(column.ColumnName);
         }
+        return headers;
+    }
 
-        private static IList<string> GetCells(DataRow row)
-        {
-            return row.ItemArray.Select(x => x.ToString()).ToList();
-        }
+    private static IList<string> GetCells(DataRow row)
+    {
+        return row.ItemArray.Select(x => x.ToString()).ToList();
     }
 }
