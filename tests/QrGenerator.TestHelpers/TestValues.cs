@@ -56,7 +56,7 @@ public static class TestValues
     };
 
     public static readonly IList<string> DefaultHeaders = new List<string>
-        {
-            "Artikelnummer","Bezeichnung","Gewicht"
-        };
+    {
+        "Artikelnummer","Bezeichnung","Gewicht"
+    };
 }
