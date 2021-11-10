@@ -74,7 +74,7 @@ jobs:
         file: output.cobertura.xml
         
     - name: Publish
-      run: dotnet publish -p:PublishProfile=FolderProfile
+      run: dotnet publish .\src\QrGenerator.Cli\QrGenerator.Cli.csproj -p:PublishProfile=FolderProfile -f net5.0
       
     - name: Upload build artifacts
       uses: actions/upload-artifact@v2
