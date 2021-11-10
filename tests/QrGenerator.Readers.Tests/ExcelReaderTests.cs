@@ -1,7 +1,4 @@
-﻿using NUnit.Framework;
-using QrGenerator.Abstract;
-
-namespace QrGenerator.Readers.Tests;
+﻿namespace QrGenerator.Readers.Tests;
 
 [TestFixture]
 public class ExcelReaderTests : TableReaderTestBase

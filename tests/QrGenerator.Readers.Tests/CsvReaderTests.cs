@@ -1,6 +1,3 @@
-using NUnit.Framework;
-using QrGenerator.Abstract;
-
 namespace QrGenerator.Readers.Tests;
 
 [TestFixture]

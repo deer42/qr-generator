@@ -1,8 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-using QrGenerator.Abstract;
-using QrGenerator.TestHelpers;
-using System;
+﻿using System;
 using System.IO;
 
 namespace QrGenerator.Readers.Tests;

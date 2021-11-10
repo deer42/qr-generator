@@ -1,8 +1,4 @@
-﻿using NUnit.Framework;
-using QrGenerator.Abstract;
-using QrGenerator.TestHelpers;
-
-namespace QrGenerator.Tests;
+﻿namespace QrGenerator.Tests;
 
 [TestFixture]
 public class QrGenTests : QrGenTestBase

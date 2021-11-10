@@ -1,7 +1,3 @@
-using FluentAssertions;
-using NUnit.Framework;
-using QrGenerator.Abstract;
-using QrGenerator.Writers;
 using System.Collections.Generic;
 using System.Drawing.Imaging;
 

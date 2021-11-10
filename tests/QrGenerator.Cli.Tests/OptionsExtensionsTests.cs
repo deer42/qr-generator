@@ -1,8 +1,4 @@
-﻿using FluentAssertions;
-using NUnit.Framework;
-using QrGenerator.TestHelpers;
-
-namespace QrGenerator.Cli.Tests;
+﻿namespace QrGenerator.Cli.Tests;
 
 [TestFixture]
 public class OptionsExtensionsTests

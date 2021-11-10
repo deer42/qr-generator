@@ -1,8 +1,4 @@
 ﻿using ExcelDataReader;
-using FluentAssertions;
-using NUnit.Framework;
-using QrGenerator.Abstract;
-using QrGenerator.TestHelpers;
 using System.Data;
 using System.IO;
 
