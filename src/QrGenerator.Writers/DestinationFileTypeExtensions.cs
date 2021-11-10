@@ -1,5 +1,4 @@
-﻿using QrGenerator.Abstract;
-using System.Drawing.Imaging;
+﻿using System.Drawing.Imaging;
 
 namespace QrGenerator.Writers;
 

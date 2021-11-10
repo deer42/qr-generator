@@ -1,7 +1,4 @@
-﻿using QrGenerator.Abstract;
-using System.Collections.Generic;
-
-namespace QrGenerator;
+﻿namespace QrGenerator;
 
 public abstract class QrGenBase : IQrGen
 {

@@ -1,5 +1,4 @@
 ﻿using QRCoder;
-using QrGenerator.Abstract;
 using System;
 
 namespace QrGenerator.Writers;

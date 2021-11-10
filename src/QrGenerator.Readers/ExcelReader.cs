@@ -1,8 +1,4 @@
-﻿using ExcelDataReader;
-using QrGenerator.Abstract;
-using System.IO;
-
-namespace QrGenerator.Readers;
+﻿namespace QrGenerator.Readers;
 
 public class ExcelReader : TableReaderBase
 {

@@ -1,6 +1,4 @@
-﻿using QrGenerator.Abstract;
-
-namespace QrGenerator;
+﻿namespace QrGenerator;
 
 public static class QrGenFactory
 {

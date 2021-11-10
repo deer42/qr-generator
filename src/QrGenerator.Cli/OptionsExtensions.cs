@@ -1,6 +1,4 @@
-﻿using QrGenerator.Abstract;
-
-namespace QrGenerator.Cli;
+﻿namespace QrGenerator.Cli;
 
 public static class OptionsExtensions
 {

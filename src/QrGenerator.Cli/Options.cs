@@ -1,5 +1,4 @@
 ﻿using CommandLine;
-using QrGenerator.Abstract;
 
 namespace QrGenerator.Cli;
 

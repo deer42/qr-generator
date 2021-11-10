@@ -1,6 +1,4 @@
-﻿using QrGenerator.Abstract;
-using System;
-using System.Collections.Generic;
+﻿using System;
 
 namespace QrGenerator;
 

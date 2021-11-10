@@ -1,5 +1,4 @@
-﻿using QrGenerator.Abstract;
-using QrGenerator.Readers;
+﻿using QrGenerator.Readers;
 using System.IO;
 
 namespace QrGenerator.Cli;
